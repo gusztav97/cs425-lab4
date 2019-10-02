@@ -17,6 +17,27 @@ var Lab4 = ( function() {
              */
 
             // INSERT YOUR CODE HERE
+            
+            var output = ""
+            
+            var userInput = parseInt( $("input").val() );
+            var date = rates.date;
+            var rateList = rates["rates"];
+            
+            //alert(JSON.stringify(rateList));
+            
+            for (var i in rateList){
+                if (rateList.hasOwnProperty(i)){
+                    var value = rateList[i];
+                    var number = (value * userInput).toFixed(2);
+                    
+                    output += (i + ": " + number + "<br>");
+                }
+            }
+            
+            $("#output").html(output);
+            $("#output").append("<br>Based on " + date + " exchange rates");
+            
 
         },
         
